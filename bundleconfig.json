@@ -1,0 +1,56 @@
+[
+  {
+    "outputFileName": "styles/funtime.min.css",
+    "inputFiles": [
+      "styles/funtime.css"
+    ]
+  },
+  {
+    "outputFileName": "css/style.min.css",
+    "inputFiles": [
+      "css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "css/owl.carousel.min.css",
+    "inputFiles": [
+      "css/owl.carousel.css"
+    ]
+  },
+  {
+    "outputFileName": "layerslider/css/layerslider.min.css",
+    "inputFiles": [
+      "layerslider/css/layerslider.css"
+    ]
+  },
+  {
+    "outputFileName": "js/main.min.js",
+    "inputFiles": [
+      "js/main.js"
+    ]
+  },
+  {
+    "outputFileName": "js/featherlight.min.js",
+    "inputFiles": [
+      "js/featherlight.js"
+    ]
+  },
+  {
+    "outputFileName": "js/featherlight.gallery.min.js",
+    "inputFiles": [
+      "js/featherlight.gallery.js"
+    ]
+  },
+  {
+    "outputFileName": "css/featherlight.gallery.min.css",
+    "inputFiles": [
+      "css/featherlight.gallery.css"
+    ]
+  },
+  {
+    "outputFileName": "css/featherlight.min.css",
+    "inputFiles": [
+      "css/featherlight.css"
+    ]
+  }
+]
