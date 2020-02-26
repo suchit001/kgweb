@@ -767,160 +767,996 @@
     <svg id="triangleShadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path class="trianglePath1" d="M0 0 L50 100 L100 0 Z"/>
     </svg>
-    <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
-            <!-- Section heading -->
-            <div class="section-heading">
-                <h2>Price</h2>
+    <style type="text/css">
+        *{
+          -webkit-box-sizing: border-box;
+          box-sizing:border-box ;
+        }
+        @font-face {
+            font-family: 'Avenir-Medium';
+            src: url("https://d1e7veuf3koykl.cloudfront.net/static_files/files/000/000/002/original/Avenir-Medium.ttf?1494581917");
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          background:#f9f9f9;
+          width:100%;
+          height:100%;
+          font-family: 'Avenir-Medium',sans-serif;
+        }
+        text{
+            font-size:11px;
+            pointer-events:none;
+            display:block;
+        }
+    
+        .main-container{
+          display:inline-flex;
+          width:100%;
+          height:100%;
+          align-items: center;
+          justify-content: center;
+          max-width:1200px;
+        }
+    
+        #header-text-responsive{
+            display:none;
+        }
+    
+        #chart{
+            width:49%;
+            z-index:1;
+            /*border: 20px solid #ffffff;*/
+            /*height:500px;*/
+        }
+    
+        #offer{
+            width:49%;
+            height:100%;
+            min-height:525px;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction:column;
+            position:relative;
+            left:156px;
+            background:transparent;
+            z-index:0;
+            border-radius: 10px;
+        }
+    
+        #offer .selected-message{
+            width:300px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.23;
+            text-align: center;
+            color: #333333;
+            white-space: pre-wrap;      /* CSS3 */
+            white-space: -moz-pre-wrap; /* Firefox */
+            white-space: -pre-wrap;     /* Opera <7 */
+            white-space: -o-pre-wrap;   /* Opera 7 */
+            word-wrap: break-word;
+        }
+    
+        .header-text{
+          font-size:35px;
+          font-weight:bold;
+          color:#333333;
+          position: relative;
+          top: -40px;
+        }
+    
+    
+        .disclaimer-text{
+        }
+    
+        @media only screen and (max-width: 450px)  and (min-width: 300px){
+            .main-container{
+              display:flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            #header-text-responsive{
+              display:flex;
+              align-items: center;
+              justify-content:center;
+              height:80px;
+            }
+            .header-text{
+              display:none;
+            }
+            #chart{
+              display:flex;
+              justify-content: center;
+              width:133%;
+              order:1;
+            }
+            #offer{
+              width:100%;
+              position:static;
+              align-items: center;
+              order:2;
+              background:transparent;
+            }
+            svg{
+              transform:scale(0.6);
+            }
+        }
+    
+    
+        @media only screen and (max-width: 550px) and (min-width: 451px){
+            .main-container{
+              display:flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            #header-text-responsive{
+              display:flex;
+              align-items: center;
+              justify-content:center;
+              height:80px;
+            }
+            .header-text{
+              display:none;
+            }
+            #chart{
+              display:flex;
+              justify-content: center;
+              width:100%;
+              order:1;
+            }
+            #offer{
+              position:static;
+              width:100%;
+              align-items: center;
+              order:2;
+              background:transparent;
+            }
+            svg{
+              transform:scale(0.6);
+            }
+        }
+    
+        @media only screen and (max-width: 650px) and (min-width: 551px){
+            .main-container{
+              display:flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            #header-text-responsive{
+              display:flex;
+              align-items: center;
+              justify-content:center;
+              height:80px;
+            }
+            .header-text{
+              display:none;
+            }
+            #chart{
+              display:flex;
+              justify-content: center;
+              width:100%;
+              order:1;
+            }
+            #offer{
+              position:static;
+              justify-content: center;
+              align-items: center;
+              width:100%;
+              order:2;
+              background:transparent;
+            }
+            svg{
+              transform:scale(0.7);
+            }
+        }
+    
+        @media only screen and (max-width: 800px) and (min-width: 651px){
+            .main-container{
+              display:flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            #header-text-responsive{
+              display:flex;
+              align-items: center;
+              justify-content:center;
+              height:80px;
+            }
+            .header-text{
+              display:none;
+            }
+            #chart{
+              display:flex;
+              justify-content: center;
+              width:100%;
+              order:1;
+            }
+            #offer{
+              position:static;
+              width:100%;
+              align-items: center;
+              order:2;
+              background:transparent;
+            }
+            svg{
+              transform:scale(0.8);
+            }
+        }
+    
+        @media only screen and (max-width: 1100px) and (min-width: 801px){
+            .main-container{
+              display:flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            #header-text-responsive{
+              display:flex;
+              align-items: center;
+              justify-content:center;
+              height:80px;
+            }
+            .header-text{
+              display:none;
+            }
+            #chart{
+              display:flex;
+              justify-content: center;
+              width:100%;
+              order:1;
+            }
+            #offer{
+              position:static;
+              width:100%;
+              align-items: center;
+              order:2;
+              background:transparent;
+            }
+        }
+    
+    
+        @keyframes blink{
+        0%, 49% {
+            fill: #ffffff;
+        }
+        50%, 100% {
+            fill: #13c4fa;
+        }
+        }
+    
+        .outerbox{
+          width:258px;
+          height:78px;
+          background:#A54D9D;
+          border-radius: 8px;
+          padding: 14px;
+          position:relative;
+        }
+    
+        .innerbox{
+          width:230px;
+          height:50px;
+          border-radius: 8px;
+          background: #ffdc4c;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+    
+        .stw-text{
+          width:100%;
+          font-size:24px;
+          font-weight: bold;
+          color:#333333;
+          text-align: center;
+        }
+    
+        .even{
+          animation: blink1 1s ease-in infinite;
+        }
+    
+        .odd{
+          animation: blink2 1s ease-in infinite;
+        }
+    
+        @keyframes blink1{
+          0%,49%{
+            background: red;
+          }
+          50%,100%{
+            background: white;
+          }
+        }
+        @keyframes blink2{
+          0%,49%{
+            background: white;
+          }
+          50%,100%{
+            background: red;
+          }
+        }
+        .circle-design {
+          position:absolute;
+          width:6px;
+          height:6px;
+          border-radius:50%;
+        }
+        .circle1{
+          left: 14px;
+          top: 4px;
+        }
+        .circle2{
+          left: 27px;
+          top: 4px;
+        }
+        .circle3{
+          left: 42px;
+          top: 4px;
+        }
+        .circle4{
+          left: 55px;
+          top: 4px;
+        }
+        .circle5{
+          left: 70px;
+          top: 4px;
+        }
+        .circle6{
+          left: 85px;
+          top: 4px;
+        }
+        .circle7{
+          left: 100px;
+          top: 4px;
+        }
+        .circle8{
+          left: 115px;
+          top: 4px;
+        }
+        .circle9{
+          left: 130px;
+          top: 4px;
+        }
+        .circle10{
+          left: 145px;
+          top: 4px;
+        }
+        .circle11{
+          left: 160px;
+          top: 4px;
+        }
+        .circle12{
+          left: 175px;
+          top: 4px;
+        }
+        .circle13{
+          left: 190px;
+          top: 4px;
+        }
+        .circle14{
+          left: 205px;
+          top: 4px;
+        }
+        .circle15{
+          left: 220px;
+          top: 4px;
+        }
+        .circle16{
+          left: 235px;
+          top: 4px;
+        }
+        .circle17{
+          left: 248px;
+          top: 15px;
+        }
+        .circle18{
+          left: 248px;
+          top: 30px;
+        }
+        .circle19{
+          left: 248px;
+          top: 45px;
+        }
+        .circle20{
+          left: 248px;
+          top: 60px;
+        }
+        .circle21{
+          left: 233px;
+          top: 68px;
+        }
+        .circle22{
+          left: 218px;
+          top: 68px;
+        }
+        .circle23{
+          left: 203px;
+          top: 68px;
+        }
+        .circle24{
+          left: 188px;
+          top: 68px;
+        }
+        .circle25{
+          left: 173px;
+          top: 68px;
+        }
+        .circle26{
+          left: 158px;
+          top: 68px;
+        }
+        .circle27{
+          left: 143px;
+          top: 68px;
+        }
+        .circle28{
+          left: 128px;
+          top: 68px;
+        }
+        .circle29{
+          left: 113px;
+          top: 68px;
+        }
+        .circle30{
+          left: 98px;
+          top: 68px;
+        }
+        .circle31{
+          left: 83px;
+          top: 68px;
+        }
+        .circle32{
+          left: 70px;
+          top: 68px;
+        }
+        .circle33{
+          left: 56px;
+          top: 68px;
+        }
+        .circle34{
+          left: 43px;
+          top: 68px;
+        }
+        .circle35{
+          left: 30px;
+          top: 68px;
+        }
+        .circle36{
+          left: 15px;
+          top: 68px;
+        }
+        .circle37{
+          left: 5px;
+          top: 60px;
+        }
+        .circle38{
+          left: 5px;
+          top: 45px;
+        }
+        .circle39{
+          left: 5px;
+          top: 30px;
+        }
+        .circle40{
+          left: 5px;
+          top: 15px;
+        }
+    
+        </style>
+    <div class="main-container">
+        <div id="header-text-responsive">
+          <div class="outerbox">
+            <div class="circle-design circle1 odd"></div>
+            <div class="circle-design circle2 even"></div>
+            <div class="circle-design circle3 odd"></div>
+            <div class="circle-design circle4 even"></div>
+            <div class="circle-design circle5 odd"></div>
+            <div class="circle-design circle6 even"></div>
+            <div class="circle-design circle7 odd"></div>
+            <div class="circle-design circle8 even"></div>
+            <div class="circle-design circle9 odd"></div>
+            <div class="circle-design circle10 even"></div>
+            <div class="circle-design circle11 odd"></div>
+            <div class="circle-design circle12 even"></div>
+            <div class="circle-design circle13 odd"></div>
+            <div class="circle-design circle14 even"></div>
+            <div class="circle-design circle15 odd"></div>
+            <div class="circle-design circle16 even"></div>
+            <div class="circle-design circle17 odd"></div>
+            <div class="circle-design circle18 even"></div>
+            <div class="circle-design circle19 odd"></div>
+            <div class="circle-design circle20 even"></div>
+            <div class="circle-design circle21 odd"></div>
+            <div class="circle-design circle22 even"></div>
+            <div class="circle-design circle23 odd"></div>
+            <div class="circle-design circle24 even"></div>
+            <div class="circle-design circle25 odd"></div>
+            <div class="circle-design circle26 even"></div>
+            <div class="circle-design circle27 odd"></div>
+            <div class="circle-design circle28 even"></div>
+            <div class="circle-design circle29 odd"></div>
+            <div class="circle-design circle30 even"></div>
+            <div class="circle-design circle31 odd"></div>
+            <div class="circle-design circle32 even"></div>
+            <div class="circle-design circle33 odd"></div>
+            <div class="circle-design circle34 even"></div>
+            <div class="circle-design circle35 odd"></div>
+            <div class="circle-design circle36 even"></div>
+            <div class="circle-design circle37 odd"></div>
+            <div class="circle-design circle38 even"></div>
+            <div class="circle-design circle39 odd"></div>
+            <div class="circle-design circle40 even"></div>
+            <div class="innerbox ">
+              <span class="stw-text">SPIN THE WHEEL</span>
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <!-- Price tables -->
-                <div class="pricing pricing-palden">
-			 <div class="pricing-item col-lg-4 col-md-4 col-sm-12">
-                        <div class="pricing-deco" style="background-color: #ec9600;">
-                            <svg class="pricing-deco-img" enable-background='new 0 0 300 100' height='100px' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-                            </svg>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">$</span>106
-                                <span class="pricing-period">/ day</span>
-                            </div>
-                            <h3 class="pricing-title">Baby room fees</h3>
-                        </div>
-                        <!-- List -->
-                        <ul class="pricing-feature-list">
-                            <li>Long Day Care service 7:00AM to 6:00PM</li>
-                            <li>Complete Nutritious meals included</li>
-                        </ul>
-                        <!-- Button-->
-                        <div class="page-scroll">
-                            <a class="btn" href="#waitlist">Request Placement</a>
-                        </div>
-                        <!--/page-scroll-->
-                    </div>
-                    <!--/pricing-item-->
-                    <div class="pricing-item col-lg-4 col-md-4 col-sm-12">
-                        <div class="pricing-deco">
-                            <svg class="pricing-deco-img" enable-background='new 0 0 300 100' height='100px' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                            <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                            <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                            <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                            <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-                            </svg>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">$</span>105
-                                <span class="pricing-period">/ day</span>
-                            </div>
-                            <h3 class="pricing-title">2 - 3 year old fees</h3>
-                        </div>
-                        <!-- List -->
-                        <ul class="pricing-feature-list">
-                            <li>Long Day Care service 7:00AM to 6:00PM</li>
-                            <li>Complete Nutritious meals and nappies included</li>
-                        </ul>
-                        <!-- Button-->
-                        <div class="page-scroll">
-                            <a class="btn" href="#waitlist">Request Placement</a>
-                        </div>
-                        <!--/page-scroll-->
-                    </div>
-		 <div class="pricing-item col-lg-4 col-md-4 col-sm-12">
-                        <div class="pricing-deco" style="background-color: #ec9600;">
-                            <svg class="pricing-deco-img" enable-background='new 0 0 300 100' height='100px' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-                            </svg>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">$</span>102
-                                <span class="pricing-period">/ day</span>
-                            </div>
-                            <h3 class="pricing-title">3 - 6 year old fees</h3>
-                        </div>
-                        <!-- List -->
-                        <ul class="pricing-feature-list">
-                            <li>Long Day Care service 7:00AM to 6:00PM</li>
-                            <li>Complete Nutritious meals included</li>
-                        </ul>
-                        <!-- Button-->
-                        <div class="page-scroll">
-                            <a class="btn" href="#waitlist">Request Placement</a>
-                        </div>
-                        <!--/page-scroll-->
-                    </div>
-                    <!--/pricing-item-->
-                    <!--/pricing-item-->
-                    <div class="pricing-item col-lg-4 col-md-4 col-sm-12">
-                        <div class="pricing-deco">
-                            <svg class="pricing-deco-img" enable-background='new 0 0 300 100' height='100px' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-                            </svg>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">Public Holiday</span>
-                                <span class="pricing-period"></span>
-                            </div>
-                            <h3 class="pricing-title">Make-up Days</h3>
-                        </div>
-                        <!-- List -->
-                        <ul class="pricing-feature-list">
-                            <li>If your child attends Lizzards Preschool on a day that falls on a public holiday, you will have the option to take up another day of care for free during the year.</li>
-                            <li>In order to receive your make up day you will need to advise staff of which day you would like your child to attend preschool, staff will then check to make sure we have a space available for that day.</li>
-                            <li><i>Conditions apply please see centre staff for details</i></li>
-                        </ul>
-                        <!-- Button-->
-                        <div class="page-scroll">
-                            <a class="btn" href="#waitlist">Request Placement</a>
-                        </div>
-                        <!--/page-scroll-->
-                    </div>
-                    <!--/pricing-item-->
-                </div>
-
-                <div class="pricing pricing-palden">
-                    <!--<div class="pricing-item col-lg-4 col-md-4 col-sm-12">
-                        <div class="pricing-deco" style="background-color: #ec9600;">
-                            <svg class="pricing-deco-img" enable-background='new 0 0 300 100' height='100px' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                            <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                            <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                            <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                            <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-                            </svg>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">$</span>74
-                                <span class="pricing-period">/ day</span>
-                            </div>
-                            <h3 class="pricing-title">2018 Short Daily Rate</h3>
-                        </div>
-                        <!-- List -->
-                        <!--<ul class="pricing-feature-list">
-                            <li><strong>Introducing short days for 2018 enrolments.</strong></li>
-                            <li>Short Day Care service 9:00AM to 3:30PM</li>
-                            <li>Complete Nutritious meals included</li>
-                        </ul>-->
-                        <!-- Button-->
-                        <!--<div class="page-scroll">
-                            <a class="btn" href="#waitlist">Request Placement</a>
-                        </div>-->
-                        <!--/page-scroll-->
-                    </div>
-                    <!--/pricing-item-->
-                </div>
-
-                <!-- /col-sm-12-->
+        <div id="offer">
+          <div class="header-text">
+            <div class="outerbox">
+              <div class="circle-design circle1 odd"></div>
+              <div class="circle-design circle2 even"></div>
+              <div class="circle-design circle3 odd"></div>
+              <div class="circle-design circle4 even"></div>
+              <div class="circle-design circle5 odd"></div>
+              <div class="circle-design circle6 even"></div>
+              <div class="circle-design circle7 odd"></div>
+              <div class="circle-design circle8 even"></div>
+              <div class="circle-design circle9 odd"></div>
+              <div class="circle-design circle10 even"></div>
+              <div class="circle-design circle11 odd"></div>
+              <div class="circle-design circle12 even"></div>
+              <div class="circle-design circle13 odd"></div>
+              <div class="circle-design circle14 even"></div>
+              <div class="circle-design circle15 odd"></div>
+              <div class="circle-design circle16 even"></div>
+              <div class="circle-design circle17 odd"></div>
+              <div class="circle-design circle18 even"></div>
+              <div class="circle-design circle19 odd"></div>
+              <div class="circle-design circle20 even"></div>
+              <div class="circle-design circle21 odd"></div>
+              <div class="circle-design circle22 even"></div>
+              <div class="circle-design circle23 odd"></div>
+              <div class="circle-design circle24 even"></div>
+              <div class="circle-design circle25 odd"></div>
+              <div class="circle-design circle26 even"></div>
+              <div class="circle-design circle27 odd"></div>
+              <div class="circle-design circle28 even"></div>
+              <div class="circle-design circle29 odd"></div>
+              <div class="circle-design circle30 even"></div>
+              <div class="circle-design circle31 odd"></div>
+              <div class="circle-design circle32 even"></div>
+              <div class="circle-design circle33 odd"></div>
+              <div class="circle-design circle34 even"></div>
+              <div class="circle-design circle35 odd"></div>
+              <div class="circle-design circle36 even"></div>
+              <div class="circle-design circle37 odd"></div>
+              <div class="circle-design circle38 even"></div>
+              <div class="circle-design circle39 odd"></div>
+              <div class="circle-design circle40 even"></div>
+              <div class="innerbox ">
+                <div class="stw-text">SPIN THE WHEEL</div>
+              </div>
             </div>
-            <!-- /row -->
+    
+          </div>
+          <div class="selected-message"></div>
+          <div class="disclaimer-text">*All the information presented cannot be taken for granted.
+               Do your own research.<</div>
         </div>
-        <!-- /container-->
-    </div>
+        <div id="chart"></div>
+      </div>
+    
+    
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            var padding = {top:20, right:40, bottom:0, left:0},
+                w = 520 - padding.left - padding.right,
+                h = 520 - padding.top  - padding.bottom,
+                r = Math.min(w, h)/2,
+                rotation = 0,
+                oldrotation = 0,
+                count = 0,
+                picked = 100000,
+                // oldpick = [],
+                color = d3.scale.ordinal()
+                  .domain(['1','2','3','4','5','6','7','8'])
+                  .range(['#ffd200','#ffc000','#ffb04c','#fa7f44','#f16521','#de5a40','#d22032','#d33646']);//category20c()
+                //randomNumbers = getRandomNumbers();['#fa7f44','#f16522','#de5a40','#d22032','#d22032','#e9b755','#f3994e','#f2d4a9']
+    
+    
+            var data = [
+                        {"label":"Engineer",  "value":1,  "offer":""}, // padding
+                        {"label":"Doctor",  "value":1,  "offer":""}, //font-family
+                        {"label":"Scientist",  "value":1,  "offer":""}, //color
+                        {"label":"Pilot",  "value":1,  "offer":""}, //font-weight
+                        {"label":"Policeman",  "value":1,  "offer":""}, //font-size
+                        {"label":"Professor",  "value":1,  "offer":""}, //background-color
+                        {"label":"Athlete",  "value":1,  "offer":""}, //nesting
+                        {"label":"Fashion Designer",  "value":1,  "offer":""} //bottom
+            ];
+    
+    
+            var svg = d3.select('#chart')
+                .append("svg")
+                .data([data])
+                .attr("width",  w + padding.left + padding.right + 80)
+                .attr("height", h + padding.top + padding.bottom + 80);
+    
+            var defs = svg.append("defs");
+    
+            // create filter with id #drop-shadow
+            // height=130% so that the shadow is not clipped
+            var filter = defs.append("filter")
+                .attr("id", "drop-shadow")
+                .attr("height", "130%");
+    
+            filter.append("feColorMatrix")
+                .attr("in", "SourceAlpha")
+                .attr("type", "saturate")
+                .attr("values", "0.25");
+    
+            // SourceAlpha refers to opacity of graphic that this filter will be applied to
+            // convolve that with a Gaussian with standard deviation 3 and store result
+            // in blur
+            filter.append("feGaussianBlur")
+                .attr("in", "SourceAlpha")
+                .attr("stdDeviation", 5)
+                .attr("result", "blur");
+    
+            // translate output of Gaussian blur to the right and downwards with 2px
+            // store result in offsetBlur
+            filter.append("feOffset")
+                .attr("in", "blur")
+                .attr("dx", 5)
+                .attr("dy", 5)
+                .attr("result", "offsetBlur");
+    
+            // overlay original SourceGraphic over translated blurred opacity by using
+            // feMerge filter. Order of specifying inputs is important!
+            var feMerge = filter.append("feMerge");
+    
+            feMerge.append("feMergeNode")
+                .attr("in", "offsetBlur")
+            feMerge.append("feMergeNode")
+                .attr("in", "SourceGraphic");
+    
+    
+                // create filter with id #drop-shadow for selected slice
+                // height=130% so that the shadow is not clipped
+    
+                var filter_slice = defs.append("filter")
+                    .attr("id", "drop-shadow-selected-slice")
+                    .attr("height", "130%");
+    
+                filter_slice.append("feColorMatrix")
+                    .attr("in", "SourceAlpha")
+                    .attr("type", "saturate")
+                    .attr("values", "0.25");
+    
+                // SourceAlpha refers to opacity of graphic that this filter will be applied to
+                // convolve that with a Gaussian with standard deviation 3 and store result
+                // in blur
+                filter_slice.append("feGaussianBlur")
+                    .attr("in", "SourceAlpha")
+                    .attr("stdDeviation", 10)
+                    .attr("result", "blur");
+    
+                // translate output of Gaussian blur to the right and downwards with 2px
+                // store result in offsetBlur
+                filter_slice.append("feOffset")
+                    .attr("in", "blur")
+                    .attr("dx", 0.5)
+                    .attr("dy", 0.5)
+                    .attr("result", "offsetBlur");
+    
+                // overlay original SourceGraphic over translated blurred opacity by using
+                // feMerge filter. Order of specifying inputs is important!
+                var feMerge_slice = filter_slice.append("feMerge");
+    
+                feMerge_slice.append("feMergeNode")
+                    .attr("in", "offsetBlur")
+                feMerge_slice.append("feMergeNode")
+                    .attr("in", "SourceGraphic");
+    
+              // filter for inner-circle
+              var filter_inner_circle = defs.append("filter")
+                  .attr("id", "drop-shadow-inner-circle")
+                  .attr("height", "120%");
+    
+              filter_inner_circle.append("feColorMatrix")
+                  .attr("in", "SourceAlpha")
+                  .attr("type", "saturate")
+                  .attr("values", "0.25");
+    
+              // SourceAlpha refers to opacity of graphic that this filter will be applied to
+              // convolve that with a Gaussian with standard deviation 3 and store result
+              // in blur
+              filter_inner_circle.append("feGaussianBlur")
+                  .attr("in", "SourceAlpha")
+                  .attr("stdDeviation", 5)
+                  .attr("result", "blur");
+    
+              // translate output of Gaussian blur to the right and downwards with 2px
+              // store result in offsetBlur
+              filter_inner_circle.append("feOffset")
+                  .attr("in", "blur")
+                  .attr("dx", 1)
+                  .attr("dy", 1)
+                  .attr("result", "offsetBlur");
+    
+              // overlay original SourceGraphic over translated blurred opacity by using
+              // feMerge filter. Order of specifying inputs is important!
+              var feMerge_inner_circle = filter_inner_circle.append("feMerge");
+    
+              feMerge_inner_circle.append("feMergeNode")
+                  .attr("in", "offsetBlur")
+              feMerge_inner_circle.append("feMergeNode")
+                  .attr("in", "SourceGraphic");
+    
+            var outercontainer = svg.append("g")
+                .attr("class", "chartholder-outer")
+                .attr("transform", "translate(" + (w/2 + padding.left+30) + "," + ((h/2) + padding.top ) + ")")
+                .style("fill-opacity","0.8");
+    
+          outercontainer.append("circle")
+               .attr("cx", 31)
+               .attr("cy", 31)
+               .attr("r", 300)
+               .style({"fill":"#ffffff","cursor":"pointer"});
+    
+            outercontainer.append("circle")
+                 .attr("cx", 31)
+                 .attr("cy", 31)
+                 .attr("r", 257)
+                 .style({"fill":"#a54d9d","cursor":"pointer","filter": "url(#drop-shadow)"});
+    
+    
+    
+    
+            var container = svg.append("g")
+                .attr("class", "chartholder")
+                .attr("transform", "translate(" + (w/2 + padding.left+61) + "," + (h/2 + padding.top+31) + ")");
+    
+            var vis = container
+                .append("g");
+    
+            var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+    
+            // declare an arc generator function
+            var arc = d3.svg.arc().outerRadius(r);
+    
+            createArcs();
+    
+    
+            function createArcs(){
+    
+              console.log('reached create arc');
+              // select paths, use arc generator to draw
+              var arcs = vis.selectAll("g.slice")
+                  .data(pie)
+                  .enter()
+                  .append("g")
+                  .attr("class", "slice");
+    
+              arcs.append("path")
+                  .attr("fill", function(d, i){
+                    return color(i); })
+                  // .attr("stroke","#ffffff")
+                  .attr("d", function (d) { return arc(d); });
+    
+              // add the text
+              arcs.append("text").attr("transform", function(d){
+                      d.innerRadius = 0;
+                      d.outerRadius = r;
+                      d.angle = (d.startAngle + d.endAngle)/2;
+                      return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
+                  })
+                  .attr("text-anchor", "end")
+                  .text( function(d, i) {
+                      return data[i].label;
+                  })
+                  .style({"font-size":"14px","font-weight":"bold"});
+            };
+    
+            function randomNumber(minimum, maximum){
+                return Math.round( Math.random() * (maximum - minimum) + minimum);
+            }
+    
+            function spin(d){
+                rotation = 0;
+                count++;
+                if(count > 3){
+                  alert('Please try again after n orders');
+                  return;
+                }
+                if(picked !== 100000){
+                  console.log('reached contains picked',picked,color[picked]);
+                  d3.selectAll("g.slice path")
+                      .attr("fill-opacity","1");
+                  d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                      .attr("fill", function(d, i){
+                        return color(picked); })
+                        .attr("stroke","none")
+                        .attr("filter","none");
+    
+                  d3.select(".inner-circle")
+                      .attr("style","fill: #ffffff;cursor:pointer;");
+    
+                  d3.select(".inner-circle-text-1")
+                      .transition()
+                      .style("fill","#000000");
+    
+                  d3.select(".inner-circle-text-2")
+                      .transition()
+                      .style("fill","#000000");
+                }
+    
+                createArcs();
+                new_container.on("click", null);
+    
+                //all slices have been seen, all done
+                // console.log("OldPick, Data length: " , oldpick,data);
+                // if(oldpick.length == data.length){
+                //     console.log("done");
+                //     new_container.on("click", null);
+                //     return;
+                // }
+    
+                var  ps       = 360/data.length,
+                     pieslice = Math.round(1440/data.length);
+                    //  rng      = Math.floor((Math.random() * 1440));
+    
+    
+                // picked = Math.round(data.length - (rotation % 360)/ps);
+                // picked = picked >= data.length ? (picked % data.length) : picked;
+                picked = randomNumber(0,6);
+                rotation =  7200 - (picked+1) * ps + 120;
+                console.log('ps, pieslice, rotation, picked',ps,pieslice,rotation,picked);
+    
+    
+                // if(oldpick.indexOf(picked) !== -1){
+                //     spin();
+                //     return;
+                // } else {
+                //     oldpick.push(picked);
+                // }
+    
+                // rotation += 90 - Math.round(ps/2);
+                console.log('dsdasd',90 - Math.round(ps/2));
+    
+                console.log('new rotation',rotation);
+    
+                vis.transition()
+                    .duration(3000)
+                    .attrTween("transform", rotTween)
+                    .each("end", function(){
+    
+                        // //mark offer as seen
+                        var arcs = vis.selectAll("g.slice path");
+                        arcs.transition()
+                        arcs.attr("fill-opacity", "0.5");
+    
+                        d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                            .transition()
+                            .attr("fill-opacity","1")
+                            .attr("fill", "#a54d9d")
+                            .attr("stroke","#ffffff")
+                            .attr("filter","url(#drop-shadow-selected-slice)");
+    
+    
+                        d3.select(".inner-circle")
+                            .transition()
+                            .attr("style","fill: #a54d9d;cursor:pointer;");
+    
+                        d3.select(".inner-circle-text-1")
+                            .transition()
+                            .text("Try")
+                            .style("fill","#ffffff");
+    
+                        d3.select(".inner-circle-text-2")
+                            .transition()
+                            .text("Again")
+                            .style("fill","#ffffff");
+                        //populate offer
+    
+                        // populate selcted message if it is an array
+    
+                        // var selected_offer_message_length =  data[picked].offer.length;
+                        // for(var j=0; j<selected_offer_message_length;j++){
+                        //   d3.select("#offer .selected-message")
+                        //       .append("text")
+                        //       .attr("class","selected-message-list")
+                        //       .text(data[picked].offer);
+                        // }
+    
+                        d3.select("#offer .selected-message")
+                            .text(data[picked].offer);
+    
+                        oldrotation = rotation;
+    
+                        new_container.on("click", spin);
+                    });
+            }
+    
+            //make arrow
+            svg.append("g")
+                .attr("transform", "translate(" + (w + padding.left + padding.right + 51) + "," + ((h/2)+padding.top+31) + ")")
+                .append("path")
+                .attr("d", "M-" + (r*.20) + ",0L0," + (r*.08) + "L0,-" + (r*.08) + "Z")
+                .style({"fill":"#a54d9d","stroke":"#ffffff","stroke-width":"4"});
+    
+            //draw spin circle
+           var new_container = container.append("g");
+           new_container.append("circle")
+                .attr("cx", 0)
+                .attr("cy", 0)
+                .attr("r", 45)
+                .style({"fill":"white","cursor":"pointer"});
+    
+          new_container.append("circle")
+               .attr("cx", 0)
+               .attr("cy", 0)
+               .attr("r", 40)
+               .attr("class","inner-circle")
+               .attr("filter","url(#drop-shadow-inner-circle)")
+               .style({"fill":"#ffffff","cursor":"pointer", "animation": "blink 1s infinite"});
+          // click on to spin the wheel
+          new_container.on("click", spin);
+    
+            //spin text
+          new_container.append("text")
+              .attr("x", -2)
+              .attr("y", 0)
+              .attr("text-anchor", "middle")
+              .attr("class", "inner-circle-text-1")
+              .text("Know your")
+              .style({"font-weight":"bold", "font-size":"15px","fill":"#000000"});
+    
+          new_container.append("text")
+              .attr("x", 3)
+              .attr("y", 18)
+              .attr("text-anchor", "middle")
+              .attr("class", "inner-circle-text-2")
+              .text("Future *")
+              .style({"font-weight":"bold", "font-size":"15px","fill":"#000000"});
+    
+    
+    
+            function rotTween(to) {
+              var i = d3.interpolate(oldrotation % 360, rotation);
+              return function(t) {
+                return "rotate(" + i(((t *= 2) <= 1 ? Math.pow(2, 10 * t - 10) : 2 - Math.pow(2, 10 - 10 * t)) / 2) + ")";
+              };
+            }
+    
+    
+            function getRandomNumbers(){
+                var array = new Uint16Array(1000);
+                var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+    
+                if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
+                    window.crypto.getRandomValues(array);
+                    console.log("works");
+                } else {
+                    //no support for crypto, get crappy random numbers
+                    for(var i=0; i < 1000; i++){
+                        array[i] = Math.floor(Math.random() * 100000) + 1;
+                    }
+                }
+    
+                return array;
+            }
+            
+    
+        </script>
+    
 </section>
 <!-- /Section ends -->
 
