@@ -2172,12 +2172,12 @@
 <!-- ADDMISSION ENQUIRY MODAL -->
                 <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true" style="margin-top: 150px;">
         <div class="popup-form-container" style="padding-top: 90px">
-            <form>
 <!--                 <a style="cursor:pointer;" onclick="Close_Admission_enquiry();document.getElementById('slide_admissionenq').style.display = 'none'; $.fn.fullpage.setMouseWheelScrolling(true); ">
                     <img src="img/close.png" alt="close button" style="position: relative; float:right; margin-top:20px; height: 10px; width: 10px;"></a> -->
 
                 <!--<img src="images/formtitle-admission-enquiry.jpg" alt="EuroKids Preschool Admission Enquiry" style="width:190px; height:auto;">-->
                 <h1>Enquiry</h1>
+                <form method="POST" action="modalcheck.php">
                 <input class="admission-input" type="text" placeholder="Name" id="name_AE" name="name_AE"><br>
                 <input class="admission-input" type="text" placeholder="Mobile Number" id="mobile_AE" name="mobile_AE" onkeypress="return isNumberKey(event)" maxlength="10"><br>
                 <input class="admission-input" type="text" placeholder="Email ID" id="email_AE" name="email_AE"><br>
@@ -2198,7 +2198,7 @@
                 </span>
                 <br>
                 <br>
-                <button class="fsubbutton">Submit</button>
+                <button class="fsubbutton" name="enqsubmit">Submit</button>
 
 <!--                 <a class="tc__link" style="font-size: 11px;line-height: 16px;display: inline-block;text-decoration: underline;text-align: center;color: #000;" href="../pdf/EuroKids-Data-Policy-Terms-and-Conditions.pdf" target="_blank">By clicking submit you agree to the data policy Terms &amp; Conditions.</a> -->
 
@@ -2280,5 +2280,9 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+iframe{
+    width:100%;
 }
 </style>
