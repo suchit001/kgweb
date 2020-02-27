@@ -45,7 +45,7 @@ if ( isset( $_POST['enqsubmit'] )){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$response = curl_exec($ch);
 	curl_close($ch);
-header('Location: http://localhost/kgweb-master/index.html');
+header('Location: index.html');
 
 }
 ?>
