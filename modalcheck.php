@@ -1,5 +1,4 @@
 <?php
-
 if ( isset( $_POST['enqsubmit'] )){
 	$email = $_REQUEST['email_AE'];
 	$name = $_REQUEST['name_AE'];
@@ -9,7 +8,7 @@ if ( isset( $_POST['enqsubmit'] )){
 	$subject = "Welcome to Radiant Kidz";
 
 	$headers = array(
-		"Authorization: Bearer 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",
+		"Authorization: Bearer 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",
 		'Content-Type: application/json'
 		);
 	$data = array(
@@ -45,7 +44,6 @@ if ( isset( $_POST['enqsubmit'] )){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$response = curl_exec($ch);
 	curl_close($ch);
-header('Location: http://localhost/kgweb-master/index.html');
-
+header('Location: http://www.radiantkidz.in/');
 }
 ?>
