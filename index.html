@@ -7,6 +7,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="img/site.webmanifest">
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Radiant Kidz Preschool & Day Care has been caring and educating children in Hawkesbury Heights, Winmalee and Springwood area since 1994. We provide a stimulating, safe and happy environment for children aged between 0 – 6 years.">
     <meta keywords="Radiant Kidz Preschool, Lizard, Lizard Child Care, Child care Hawkesbury Heights, Child care Winmalee, Child care Yellow Rock, Child care Springwood, Child care Valley Heights, Preschool, Long day care, Childcare"/>
@@ -37,8 +44,8 @@
     <!-- LayerSlider stylesheet -->
     <link rel="stylesheet" href="layerslider/css/layerslider.min.css">
     <!-- Favicons-->
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <!-- <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"> -->
     <link rel="shortcut icon" href="panda.png" type="image/x-icon">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159140170-1"></script>
@@ -904,7 +911,7 @@
             flex-direction:column;
             position:relative;
             left:156px;
-            background:#f9be02;
+            background:#00ff00;
             z-index:0;
             border-radius: 10px;
         }
@@ -1430,9 +1437,11 @@
             </div>
     
           </div>
+          <br>
+          <button class="btn" style="width: 200px" data-toggle="modal" data-target="#pdfmodal">Submit</button> 
           <div class="selected-message"></div>
-          <div class="disclaimer-text">*All the information presented cannot be taken for granted.
-               Do your own research.<</div>
+          <div class="disclaimer-text"><font color = "black">*Information provided are personal opinions as per research</font>
+               </div>
         </div>
         <div id="chart"></div>
       </div>
@@ -2196,13 +2205,27 @@
                 </span>
                 <br>
                 <br>
-                <button class="fsubbutton" name="enqsubmit">Submit</button>
+                <!-- <button class="fsubbutton" name="enqsubmit">Submit</button> -->
+                <button type="submit" value="Submit" class="btn" style="width: 200px">Submit</button>
 
 <!--                 <a class="tc__link" style="font-size: 11px;line-height: 16px;display: inline-block;text-decoration: underline;text-align: center;color: #000;" href="../pdf/EuroKids-Data-Policy-Terms-and-Conditions.pdf" target="_blank">By clicking submit you agree to the data policy Terms &amp; Conditions.</a> -->
 
             </form>
         </div>
-                </div> 
+        </div> 
+        <div class="modal fade" id="pdfmodal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true" style="margin-top: 150px;">
+            <div class="popup-form-container" style="padding-top: 90px">
+                <form action="pdf/pyc.pdf" method="post" target="_blank">
+                    <h1><font size="7">Enter Email Id to Download PDF</font></h1>
+                    <div class="form-group">
+                        <input type="email" name="UserName" id="UserName" class="form-control input-field" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" value="Submit" class="btn" style="width: 200px">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 
