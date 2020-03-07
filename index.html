@@ -7,15 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-<link rel="manifest" href="img/site.webmanifest">
-<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="Radiant Kidz Preschool & Day Care has been caring and educating children in Hawkesbury Heights, Winmalee and Springwood area since 1994. We provide a stimulating, safe and happy environment for children aged between 0 – 6 years.">
+    <meta name="description" content="Radiant Kidz Preschool. ">
     <meta keywords="Radiant Kidz Preschool, Lizard, Lizard Child Care, Child care Hawkesbury Heights, Child care Winmalee, Child care Yellow Rock, Child care Springwood, Child care Valley Heights, Preschool, Long day care, Childcare"/>
     <meta name="author" content="">
     <!-- Page title -->
@@ -46,7 +46,7 @@
     <!-- Favicons-->
     <!-- <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"> -->
-    <link rel="shortcut icon" href="panda.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="panda.png" type="image/x-icon"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159140170-1"></script>
     <script>
@@ -2085,10 +2085,11 @@
                     <i class="flaticon-back"></i><a href="mailto:info@radiantkidz.in">info@radiantkidz.in</a>
                 </p>
                 <p>
-                    <i class="fa fa-phone margin-icon"></i>Call us on <b><u>70217 22260</u></b>  / <b><u>70217 16755</u></b>
+                    <i class="fa fa-phone margin-icon"></i>Call us on <b><a href = "tel:7021722260">70217 22260</a></b>  / <b><a href = "tel:7021716755">70217 16755</a></b>
                 </p>
             </div>
             <!-- address info -->
+            
             <p> Radiant Kidz, Kanyakumari Heights, Bunder Pakhadi Road, Off New Link Road, Behind DB Orchid Suburbia, Kandivali (West),Mumbai - 400067. </p>
             <!-- Map -->
             <div id="map-canvas"></div>
@@ -2206,7 +2207,7 @@
                 <br>
                 <br>
                 <!-- <button class="fsubbutton" name="enqsubmit">Submit</button> -->
-                <button type="submit" value="Submit" class="btn" style="width: 200px">Submit</button>
+                <button type="submit" value="Submit" class="btn" style="width: 200px" onclick="return OnButton1()";>Submit</button>
 
 <!--                 <a class="tc__link" style="font-size: 11px;line-height: 16px;display: inline-block;text-decoration: underline;text-align: center;color: #000;" href="../pdf/EuroKids-Data-Policy-Terms-and-Conditions.pdf" target="_blank">By clicking submit you agree to the data policy Terms &amp; Conditions.</a> -->
 
@@ -2307,3 +2308,18 @@ iframe{
     width:100%;
 }
 </style>
+
+<script language=javascript>
+<!--
+function OnButton1()
+{
+    document.Form1.action = "login2.php"    // First target
+    document.Form1.target = "iframe1";    // Open in a iframe
+    document.Form1.submit();        // Submit the page
+    document.Form1.action = "page3.php"    // Second target
+    document.Form1.target = "iframe2";    // Open in a iframe
+    document.Form1.submit();        // Submit the page
+    return true;
+}
+
+</script>
